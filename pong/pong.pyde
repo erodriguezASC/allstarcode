@@ -8,6 +8,7 @@ yCoordinate= a
 c= choice([-5,5])
 xv = c
 yv = c
+score = 0
 
 def setup():
     size(500, 500)
@@ -15,10 +16,9 @@ def setup():
     frameRate(60)
 
 def draw():
-    #moves ball straight down
-    global xCoordinate, yCoordinate, yv, xv
-
     
+    global xCoordinate, yCoordinate, yv, xv, score
+    #spawns ball in random place
     background(255, 255, 255)
     fill(0, 255, 0)
     noStroke()
@@ -40,9 +40,12 @@ def draw():
     
     #bottom of screen 
     if yCoordinate > 475:
-        fill(255, 0, 0)
-        textSize(100)
-        text("YOU LOSE", 10, 250)
+        score = score + 1
+        print score
+        #background(0, 0, 0)
+        # fill(255, 0, 0)
+        # textSize(100)
+        # text("YOU LOSE", 10, 250)
     
     #top of screen
     if yCoordinate < 25:
